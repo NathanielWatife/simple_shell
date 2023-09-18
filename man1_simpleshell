@@ -1,0 +1,77 @@
+.TH SHELL 3 "18 SEPTEMBER 2023"  "shell man page"
+.SH NAME
+ShiP$ - shellter_in_place
+
+
+.SH SYNOPSIS
+ShiP$ [options] [file]
+
+
+.SH DESCRIPTION
+
+.B ShiP$
+is a command language interpreter that executes commands read from the standard
+input or from a file.
+
+.B Overview
+
+shellter_in_place is a shell that reads input and generally executes commands.
+
+.B Lexical Structure
+
+shellter_in_place reads lines from a file and breaks it up
+into tokens at whitespace.
+
+.B ./hsh
+This executable file runs shellter_in_place
+
+.SH USAGE
+	In addition to searching the path, the following features are supported:
+.br
+	exit - Exit shell with a specified exit status
+.br
+	env - Print a list of the environment variables
+.br
+	setenv - Set a new environment variable
+.br
+	unsetenv - Unset an environment variable
+.br
+	cd - Change directories
+.br
+	Ctrl-D - End of file: exit shell
+.br
+	; - Command separator
+.br
+	# - Comment indicator
+.br
+.SH BUILTINS
+.br
+	exit - to exit shellter_in_place
+.br
+	cd - to change the directory
+.br
+	env - prints out the environment variables
+.br
+	setenv - initialize a new environment variable, or modify an existing one
+.br
+	unsetenv - remove an environment variable
+.br
+
+
+.SH EXAMPLE
+
+Ship$ ls -a
+
+hsh main.c header.h
+
+Ship$ exit
+
+$
+
+
+.SH BUGS
+No known bugs
+
+.SH AUTHOR
+Awosanmi Boluwatife Nathaniel(awosanminathaniel0@gmail.com) and
+Olawale Isaac
