@@ -1,8 +1,7 @@
 #include "shell.h"
+
 /**
  * puts_prompt -puts the prompt
- *
- *
  */
 void putprompt(void)
 {

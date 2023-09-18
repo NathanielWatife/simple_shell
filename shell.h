@@ -11,6 +11,9 @@
 #include <errno.h>
 #include <sys/wait.h>
 
+#define FREE(x) (x = (free(x), NULL))
+#define PROMPT "Ship$ "
+
 typedef struct order
 {
 	unsigned int n;
