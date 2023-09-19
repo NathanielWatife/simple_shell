@@ -2,8 +2,9 @@
 
 /**
  * puts_prompt -puts the prompt
+ *
  */
-void putprompt(void)
+void puts_prompt(void)
 {
 	_puts(PROMPT);
 }
@@ -17,6 +18,7 @@ void _puts(char *str)
 	unsigned int length;
 
 	length = _strlen(str);
+
 	write(STDOUT_FILENO, str, length);
 }
 
@@ -29,7 +31,7 @@ void _puts(char *str)
    */
 int _putchar(char c)
 {
-	return (write(1, &c, 1));
+		return (write(1, &c, 1));
 }
 
 /**
@@ -43,13 +45,13 @@ void _puts_int(int n)
 
 	while (temp_n / 10)
 	{
-	length++;
-	temp_n /= 10;
+		length++;
+		temp_n /= 10;
 	}
 	for (i = 0; i < length; i++)
 	{
-	_putchar((n / (MATH_pow(10, length - i - 1)) + '0'));
-	n %= (MATH_pow(10, length - i - 1));
+		_putchar((n / (MATH_pow(10, length - i - 1)) + '0'));
+		n %= (MATH_pow(10, length - i - 1));
 	}
 }
 
@@ -65,8 +67,8 @@ int MATH_pow(int base, int exp)
 
 	while (exp > 0)
 	{
-	retint *= base;
-	exp--;
+		retint *= base;
+		exp--;
 	}
 	return (retint);
 }

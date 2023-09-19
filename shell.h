@@ -12,7 +12,7 @@
 #include <sys/wait.h>
 
 #define FREE(x) (x = (free(x), NULL))
-#define PROMPT "Ship$ "
+#define PROMPT " $ "
 
 typedef struct order
 {
@@ -27,13 +27,8 @@ typedef struct env_list
 	struct env_list *next;
 } env_list_t;
 
-/* getline */
 int _getline(char **lineptr, size_t *n, FILE *stream);
-
-/* memory helpers */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-
-/* string helpers */
 int _atoi(char *s);
 int _strlen(char *str);
 char *_strdup(char *str);
@@ -47,28 +42,20 @@ void puts_prompt(void);
 int _putchar(char c);
 void _puts_int(int n);
 int MATH_pow(int base, int exp);
-
-/* cmd_handler */
 int cmd_handler(char **argv, env_list_t **env);
 int built_in_handler(char **argv, env_list_t **env, int i);
 int _cd(char **argv, env_list_t **env);
 void do_nothing(int nothing);
-
-/* cmd assembly */
 char **get_tokens(char *str_tok, char *delim);
 int isin_dir(char *term, char *dir);
 char *whitcher(char *cmd, env_list_t **env);
 void rem_comments(char *str);
 void double_free(char **argv);
-
-/* env variable */
 char **_initenv(void);
 void _setenv(char **argv, char ***env);
 void _unsetenv(char *entry, char ***env);
 char *_getenv(char *entry, char ***env);
 void _printenv(char ***env);
-
-/* env_list */
 env_list_t **_initenv_list(void);
 void printenv_list(env_list_t **env);
 char *_getenv_list_value(char *name, env_list_t **env);
@@ -78,13 +65,10 @@ void free_env_list_node(env_list_t *node);
 void _unsetenv_list(char **argv, env_list_t **env);
 void free_env_list(env_list_t **env);
 char **_get_str_env(env_list_t **env);
-
-/* ops */
 void *op_push_end(order_t **ops, int n);
 char **_get_cmds(char *line, order_t **ops);
 void free_ops(order_t **ops);
-
 extern char **environ;
 extern int *LINE_COUNT;
 extern char **FNC_NAME;
-#endif /* SHELL */
+#endif

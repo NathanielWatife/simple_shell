@@ -6,7 +6,7 @@
   * @dir: directory to be searched
   * Return: 1 if true, 0 if false
   */
-int isindir(char *term, char *dir)
+int isin_dir(char *term, char *dir)
 {
 	DIR *folder;
 	struct dirent *entry;
