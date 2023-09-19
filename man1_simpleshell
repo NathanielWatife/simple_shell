@@ -1,15 +1,15 @@
 .TH SHELL 3 "18 SEPTEMBER 2023"  "shell man page"
 .SH NAME
-ShiP$ - shellter_in_place
+$ - shellter_in_place
 
 
 .SH SYNOPSIS
-ShiP$ [options] [file]
+$ [options] [file]
 
 
 .SH DESCRIPTION
 
-.B ShiP$
+.B $
 is a command language interpreter that executes commands read from the standard
 input or from a file.
 
@@ -60,11 +60,11 @@ This executable file runs shellter_in_place
 
 .SH EXAMPLE
 
-Ship$ ls -a
+$ ls -a
 
 hsh main.c header.h
 
-Ship$ exit
+$ exit
 
 $
 
