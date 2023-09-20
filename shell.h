@@ -1,5 +1,11 @@
 #ifndef SHELL_H
 #define SHELL_H
+/* Newly added */
+#ifndef _SHELL_H_
+#define _SHELL_H_
+#include <fcntl.h>
+#include <signal.h>
+/*ends here*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -80,6 +86,7 @@ char *_catpath(char **uncatpath, char *command);
 int _builtins(char **args);
 void _cd(char **args);
 void _env(void);
+
 /*Utilities*/
 char *_strcat(char *dest, char *src);
 int _strlen(char *s);
@@ -90,6 +97,7 @@ unsigned int _strcspn(char *s, char *pre);
 int _strspn(char *s, const char *delim);
 void _nonintmode(char *line, char **args);
 char *_strchr(char *s, char b);
+
 /*Proto-Functions*/
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 char *_strtok_r(char *s, const char *delim, char **save_str);
