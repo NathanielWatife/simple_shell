@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * searchNode - searches linked list for string and
+ * search_node - searches linked list for string and
  * returns index
  * @head: pointer to head of list
  * @str: input string
  * Return: index of node with matching string
  */
-int searchNode(lin_t *head, char *str)
+int search_node(lin_t *head, char *str)
 {
 	register int len = 0, index = 0, i;
 	lin_t *current;

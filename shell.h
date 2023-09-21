@@ -159,7 +159,7 @@ char *_strchr(char *s, char c);
 lin_t *addNode(lin_t **head, char *str);
 lin_t *addNodeEnd(lin_t **head, char *str);
 size_t printList(const lin_t *h);
-int searchNode(lin_t *head, char *str);
+int search_node(lin_t *head, char *str);
 size_t list_len(lin_t *h);
 
 /* llfuncs2 */
