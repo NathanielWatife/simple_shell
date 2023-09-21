@@ -1,27 +1,27 @@
 #include "shell.h"
 
 /**
- * updEnviron - change enviroment variables
+ * upd_nviron - change enviroment variables
  * @build: input build
  * Return: true on success false on failure
  */
-bool updEnviron(vars_t *build)
+bool upd_environ(vars_t *build)
 {
 	register int i;
 
-	i = updold(build);
-	updcur(build, i);
+	i = upd_old(build);
+	upd_cur(build, i);
 	return (true);
 }
 
 /**
- * updold - updates OLDPWD to current PWD
+ * upd_old - updates OLDPWD to current PWD
  * @build: input build
  * Return: index in linked list of PWD on success -
  * If PWD or OLDPWD does not exist in evn vars,
  * return -1
  */
-int updold(vars_t *build)
+int upd_old(vars_t *build)
 {
 	register int pwdIndex = 0, index = 0;
 	static char old[BUFSIZE];
@@ -49,12 +49,12 @@ int updold(vars_t *build)
 }
 
 /**
- * updcur - updates PWD to accurately reflect current directory
+ * upd_cur - updates PWD to accurately reflect current directory
  * @build: input build
  * @index: index in linked list of where to insert PWD enviroment var
  * Return: true on success, false on failure
  */
-bool updcur(vars_t *build, int index)
+bool upd_cur(vars_t *build, int index)
 {
 	static char tmp[BUFSIZE], cwd[BUFSIZE];
 

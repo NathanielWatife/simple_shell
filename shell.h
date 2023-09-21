@@ -82,11 +82,11 @@ int cdFunc(vars_t *);
 bool cdToHome(vars_t *build);
 bool cdToPrevious(vars_t *build);
 bool cdToCustom(vars_t *build);
-bool updEnviron(vars_t *build);
+bool upd_environ(vars_t *build);
 
 /* cd2 */
-int updold(vars_t *build);
-bool updcur(vars_t *build, int index);
+int upd_old(vars_t *build);
+bool upd_cur(vars_t *build, int index);
 
 /* env */
 int envFunc(vars_t *build);
