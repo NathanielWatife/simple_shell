@@ -10,7 +10,7 @@ int cdFunc(vars_t *build)
 	register uint count = 0;
 	bool ableToChange = false;
 
-	count = countArgs(build->args);
+	count = count_args(build->args);
 	if (count == 1)
 	ableToChange = cdToHome(build);
 	else if (count == 2 && _strcmp(build->args[1], "-") == 0)
@@ -18,7 +18,7 @@ int cdFunc(vars_t *build)
 	else
 	ableToChange = cdToCustom(build);
 	if (ableToChange)
-	updEnviron(build);
+	upd_environ(build);
 	return (1);
 }
 
@@ -32,7 +32,7 @@ bool cdToHome(vars_t *build)
 	register int i;
 	char *str, *ptr;
 
-	i = searchNode(build->enviroment, "HOME");
+	i = search_node(build->enviroment, "HOME");
 	if (i == -1)
 	{
 	return (true);
@@ -58,7 +58,7 @@ bool cdToPrevious(vars_t *build)
 	char *current = NULL;
 
 	current = getcwd(current, 0);
-	i = searchNode(build->enviroment, "OLDPWD");
+	i = search_node(build->enviroment, "OLDPWD");
 	if (i == -1)
 	{
 	chdir(current);

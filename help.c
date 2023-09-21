@@ -16,7 +16,7 @@ int helpFunc(vars_t *build)
 	{"help", helpHelp},
 	{NULL, NULL}
 	};
-	register int i = 0, j = 1, argCount = countArgs(build->args);
+	register int i = 0, j = 1, argCount = count_args(build->args);
 	bool foundCommand = false;
 
 	if (argCount == 1)

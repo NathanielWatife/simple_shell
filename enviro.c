@@ -33,7 +33,7 @@ int setenvFunc(vars_t *build)
 	_strcat(buffer, "=");
 	_strcat(buffer, build->args[2]);
 	insertNullByte(buffer, len - 1);
-	index = searchNode(build->enviroment, build->args[1]);
+	index = search_node(build->enviroment, build->args[1]);
 	if (index == -1)
 	{
 	addNodeEnd(&build->enviroment, buffer);
@@ -61,7 +61,7 @@ int unsetenvFunc(vars_t *build)
 	{
 	if (_isalpha(build->args[i][0]) || build->args[i][0] == '_')
 	{
-	foundVar = searchNode(build->enviroment, build->args[i]);
+	foundVar = search_node(build->enviroment, build->args[i]);
 	if (foundVar > -1)
 	{
 	deleteNodeAtIndex(&build->enviroment, foundVar);

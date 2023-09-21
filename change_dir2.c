@@ -28,7 +28,7 @@ int upd_old(vars_t *build)
 	char *current = NULL;
 
 	_strcat(old, "OLD");
-	pwdIndex = searchNode(build->enviroment, "PWD");
+	pwdIndex = search_node(build->enviroment, "PWD");
 	if (pwdIndex == -1)
 	{
 	return (-1);
@@ -37,7 +37,7 @@ int upd_old(vars_t *build)
 	_strcat(old, current);
 	insertNullByte(old, _strlen(current) + 4);
 	free(current);
-	index = searchNode(build->enviroment, "OLDPWD");
+	index = search_node(build->enviroment, "OLDPWD");
 	if (index == -1)
 	{
 	return (-1);
