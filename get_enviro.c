@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * _getenv - retrieves env variable that matches input string
- * @input: input string
- * @evn: local environmental variables
- * Return: string of env variable
+ * _getenv - retrieves env var that matches input str
+ * @input: input str
+ * @evn: local environmental var
+ * Return: string of env var
  */
 char *_getenv(char *input, char **evn)
 {

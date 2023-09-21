@@ -135,8 +135,8 @@ void displayNewLine(void);
 void sigintHandler(int sigint);
 
 /* check_path */
-bool checkPath(vars_t *);
-bool checkEdgeCases(vars_t *build);
+bool check_path(vars_t *);
+bool check_edge_cases(vars_t *build);
 
 /* split_string */
 bool splitString(vars_t *build);
@@ -173,9 +173,9 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char *_memcpy(char *dest, char *src, unsigned int n);
 
 /* free */
-void freeMembers(vars_t *build);
-void freeArgsAndBuffer(vars_t *build);
-void freeArgs(char **args);
-void freeList(lin_t *head);
+void free_members(vars_t *build);
+void free_args_and_buffer(vars_t *build);
+void free_args(char **args);
+void free_list(lin_t *head);
 
 #endif

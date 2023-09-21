@@ -1,34 +1,34 @@
 #include "shell.h"
 
 /**
- * freeMembers - frees build vars_t members
+ * free_members - frees build vars_t members
  * @build: input build
  */
-void freeMembers(vars_t *build)
+void free_members(vars_t *build)
 {
 	if (build->enviroment)
-	freeList(build->enviroment);
+	free_list(build->enviroment);
 	if (build->args)
-	freeArgs(build->args);
+	free_args(build->args);
 	if (build->buffer)
 	free(build->buffer);
 }
 
 /**
- * freeArgsAndBuffer - frees args and buffer
+ * free_args_and_auffer - frees args and buffer
  * @build: input build
  */
-void freeArgsAndBuffer(vars_t *build)
+void free_args_and_buffer(vars_t *build)
 {
-	freeArgs(build->args);
+	free_args(build->args);
 	free(build->buffer);
 }
 
 /**
- * freeList - frees a linked list
+ * free_list - frees a linked list
  * @head: double pointer to head of list
  */
-void freeList(lin_t *head)
+void free_list(lin_t *head)
 {
 	lin_t *current;
 	lin_t *tmp;
@@ -47,10 +47,10 @@ void freeList(lin_t *head)
 }
 
 /**
- * freeArgs - helper func that frees double pointer arg
+ * free_args - helper func that frees double pointer arg
  * @args: array of char pointers
  */
-void freeArgs(char **args)
+void free_args(char **args)
 {
 	register uint i = 0;
 

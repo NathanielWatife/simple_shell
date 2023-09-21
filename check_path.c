@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * checkPath - searches $PATH for directory of command
- * @build: input build
- * Return: true or false
+ * check_path - searche the PATH for directory of commands
+ * @build: input builds
+ * Returns: true or false
  */
-bool checkPath(vars_t *build)
+bool check_path(vars_t *build)
 {
 	register int len;
 	static char buffer[BUFSIZE];
@@ -13,7 +13,7 @@ bool checkPath(vars_t *build)
 	char *tok, *copy, *delim = ":", *tmp;
 	bool inLoop = false;
 
-	if (checkEdgeCases(build))
+	if (check_edge_cases(build))
 	return (true);
 	copy = _strdup(build->path);
 	tok = _strtok(copy, delim);
@@ -47,11 +47,11 @@ bool checkPath(vars_t *build)
 }
 
 /**
- * checkEdgeCases - helper func for check path to check edge cases
+ * check_edge_cases - helpers functions for checking  path to check edge cases
  * @build: input build
  * Return: true if found, false if not
  */
-bool checkEdgeCases(vars_t *build)
+bool check_edge_cases(vars_t *build)
 {
 	char *copy;
 	struct stat st;
