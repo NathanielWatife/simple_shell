@@ -89,7 +89,7 @@ int upd_old(vars_t *build);
 bool upd_cur(vars_t *build, int index);
 
 /* env */
-int envFunc(vars_t *build);
+int env_func(vars_t *build);
 int setenvFunc(vars_t *build);
 int unsetenvFunc(vars_t *build);
 int _isalpha(int c);
@@ -109,7 +109,7 @@ int helpUnsetenv(vars_t *build);
 int helpHelp(vars_t *build);
 
 /* built_in_helpers*/
-int countArgs(char **args);
+int count_args(char **args);
 int _atoi(char *s);
 
 /* shell */

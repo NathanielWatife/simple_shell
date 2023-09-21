@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * envFunc - prints the enviroment
+ * env_func - prints the enviroment
  * @build: input build
  * Return: Always 1
  */
-int envFunc(vars_t *build)
+int env_func(vars_t *build)
 {
 	printList(build->enviroment);
 	return (1);
@@ -22,7 +22,7 @@ int setenvFunc(vars_t *build)
 	register int index, len;
 	static char buffer[BUFSIZE];
 
-	if (countArgs(build->args) != 3)
+	if (count_args(build->args) != 3)
 	{
 	errno = EWSIZE;
 	errorHandler(build);
