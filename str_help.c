@@ -10,7 +10,7 @@ int _strlen(char *s)
 	char *p = s;
 
 	while (*s)
-		s++;
+	s++;
 	return (s - p);
 }
 
@@ -25,7 +25,7 @@ char *_strcat(char *dest, char *src)
 	char *ptr = dest + _strlen(dest);
 
 	while (*src)
-		*ptr++ = *src++;
+	*ptr++ = *src++;
 	*ptr = 0;
 	return (dest);
 }
@@ -40,12 +40,11 @@ int _strcmp(char *s1, char *s2)
 {
 	while (*s1)
 	{
-		if (*s1 != *s2)
-			break;
-		s1++;
-		s2++;
+	if (*s1 != *s2)
+	break;
+	s1++;
+	s2++;
 	}
-
 	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
 
@@ -61,16 +60,16 @@ char *_strdup(char *str)
 	char *copy;
 
 	if (!str)
-		return (NULL);
+	return (NULL);
 	len = _strlen(str);
 	copy = malloc(sizeof(char) * len + 1);
 	if (!copy)
 	{
-		perror("Malloc failed\n");
-		exit(errno);
+	perror("Malloc failed\n");
+	exit(errno);
 	}
 	for (i = 0; i < len; i++)
-		copy[i] = str[i];
+	copy[i] = str[i];
 	copy[i] = 0;
 	return (copy);
 }

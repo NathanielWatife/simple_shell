@@ -12,7 +12,7 @@ char *_strcpy(char *dest, char *src)
 	char *ptr = dest;
 
 	while (*src)
-		*dest++ = *src++;
+	*dest++ = *src++;
 	*dest = 0;
 	return (ptr);
 }
@@ -31,16 +31,16 @@ char *_strtok(char *str, char *delim)
 	char ch;
 
 	if (str == NULL)
-		str = lastptr;
+	str = lastptr;
 	do {
-		ch = *str++;
-		if (!ch)
-			return (NULL);
+	ch = *str++;
+	if (!ch)
+	return (NULL);
 	} while (_strchr(delim, ch));
 	str--;
 	lastptr = str + _strcspn(str, delim);
 	if (*lastptr)
-		*lastptr++ = 0;
+	*lastptr++ = 0;
 	return (str);
 }
 
@@ -57,9 +57,9 @@ int _strcspn(char *string, char *chars)
 	char *p, *s;
 
 	for (s = string, c = *s; c; s++, c = *s)
-		for (p = chars; *p; p++)
-			if (c == *p)
-				return (s - string);
+	for (p = chars; *p; p++)
+	if (c == *p)
+	return (s - string);
 	return (s - string);
 }
 
@@ -75,10 +75,10 @@ char *_strchr(char *s, char c)
 
 	while (true)
 	{
-		x = *s++;
-		if (x == c)
-			return (s - 1);
-		if (!x)
-			return (NULL);
+	x = *s++;
+	if (x == c)
+	return (s - 1);
+	if (!x)
+	return (NULL);
 	}
 }

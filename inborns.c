@@ -9,24 +9,24 @@ bool findinborns(vars_t *build)
 {
 	register int i = 0;
 	inborns_t getinborns[] = {
-		{"exit", exitFunc},
-		{"env", envFunc},
-		{"cd", cdFunc},
-		{"setenv", setenvFunc},
-		{"unsetenv", unsetenvFunc},
-		{"help", helpFunc},
-		{NULL, NULL}
+	{"exit", exitFunc},
+	{"env", envFunc},
+	{"cd", cdFunc},
+	{"setenv", setenvFunc},
+	{"unsetenv", unsetenvFunc},
+	{"help", helpFunc},
+	{NULL, NULL}
 	};
 
 	while (getinborns[i].cmd)
 	{
-		if (_strcmp(build->args[0], getinborns[i].cmd) == 0)
-		{
-			getinborns[i].func(build);
-			freeArgsAndBuffer(build);
-			return (true);
-		}
-		i++;
+	if (_strcmp(build->args[0], getinborns[i].cmd) == 0)
+	{
+	getinborns[i].func(build);
+	free_args_and_buffer(build);
+	return (true);
+	}
+	i++;
 	}
 	return (false);
 }
@@ -43,23 +43,23 @@ int exitFunc(vars_t *build)
 	argCount = countArgs(build->args);
 	if (argCount == 1)
 	{
-		freeMembers(build);
-		if (build->error)
-			exit(build->error);
-		exit(EXIT_SUCCESS);
+	free_members(build);
+	if (build->error)
+	exit(build->error);
+	exit(EXIT_SUCCESS);
 	}
 	else if (argCount > 1)
 	{
-		exitStatus = _atoi(build->args[1]);
-		if (exitStatus == -1)
-		{
-			errno = EILLEGAL;
-			build->error = 2;
-			errorHandler(build);
-			return (0);
-		}
-		freeMembers(build);
-		exit(exitStatus);
+	exitStatus = _atoi(build->args[1]);
+	if (exitStatus == -1)
+	{
+	errno = EILLEGAL;
+	build->error = 2;
+	errorHandler(build);
+	return (0);
+	}
+	free_members(build);
+	exit(exitStatus);
 	}
 	return (1);
 }
