@@ -12,28 +12,28 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	void *res = NULL;
 
 	if (new_size == old_size)
-		return (ptr);
+	return (ptr);
 	if (!ptr)
 	{
-		free(ptr);
-		res = malloc(new_size);
-		if (!res)
-		{
-			perror("Malloc failed");
-			exit(errno);
-		}
-		return (res);
+	free(ptr);
+	res = malloc(new_size);
+	if (!res)
+	{
+	perror("Malloc failed");
+	exit(errno);
+	}
+	return (res);
 	}
 	if (!new_size && ptr)
 	{
-		free(ptr);
-		return (NULL);
+	free(ptr);
+	return (NULL);
 	}
 	res = malloc(new_size);
 	if (!res)
 	{
-		perror("Malloc failed");
-		exit(errno);
+	perror("Malloc failed");
+	exit(errno);
 	}
 	_memcpy(res, ptr, old_size);
 	free(ptr);
@@ -52,6 +52,6 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 	char *ptr = dest;
 
 	while (n--)
-		*dest++ = *src++;
+	*dest++ = *src++;
 	return (ptr);
 }

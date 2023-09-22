@@ -13,18 +13,18 @@ bool splitString(vars_t *build)
 
 	if (countWords(build->buffer) == 0)
 	{
-		build->args = NULL;
-		free(build->buffer);
-		return (false);
+	build->args = NULL;
+	free(build->buffer);
+	return (false);
 	}
 	build->args = malloc((countWords(build->buffer) + 1) * sizeof(char *));
 	cpy = _strdup(build->buffer);
 	tok = _strtok(cpy, " ");
 	while (tok)
 	{
-		build->args[i] = _strdup(tok);
-		tok = _strtok(NULL, " ");
-		i++;
+	build->args[i] = _strdup(tok);
+	tok = _strtok(NULL, " ");
+	i++;
 	}
 	build->args[i] = NULL;
 	free(cpy);
@@ -43,14 +43,14 @@ unsigned int countWords(char *str)
 
 	while (*str)
 	{
-		if (isSpace(*str) && wordOn)
-			wordOn = false;
-		else if (!isSpace(*str) && !wordOn)
-		{
-			wordOn = true;
-			words++;
-		}
-		str++;
+	if (isSpace(*str) && wordOn)
+	wordOn = false;
+	else if (!isSpace(*str) && !wordOn)
+	{
+	wordOn = true;
+	words++;
+	}
+	str++;
 	}
 	return (words);
 }
