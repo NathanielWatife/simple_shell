@@ -82,14 +82,14 @@ int cdFunc(vars_t *);
 bool cdToHome(vars_t *build);
 bool cdToPrevious(vars_t *build);
 bool cdToCustom(vars_t *build);
-bool upd_environ(vars_t *build);
+bool updEnviron(vars_t *build);
 
 /* cd2 */
-int upd_old(vars_t *build);
-bool upd_cur(vars_t *build, int index);
+int updold(vars_t *build);
+bool updcur(vars_t *build, int index);
 
 /* env */
-int env_func(vars_t *build);
+int envFunc(vars_t *build);
 int setenvFunc(vars_t *build);
 int unsetenvFunc(vars_t *build);
 int _isalpha(int c);
@@ -109,7 +109,7 @@ int helpUnsetenv(vars_t *build);
 int helpHelp(vars_t *build);
 
 /* built_in_helpers*/
-int count_args(char **args);
+int countArgs(char **args);
 int _atoi(char *s);
 
 /* shell */
@@ -135,8 +135,8 @@ void displayNewLine(void);
 void sigintHandler(int sigint);
 
 /* check_path */
-bool check_path(vars_t *);
-bool check_edge_cases(vars_t *build);
+bool checkPath(vars_t *);
+bool checkEdgeCases(vars_t *build);
 
 /* split_string */
 bool splitString(vars_t *build);
@@ -159,7 +159,7 @@ char *_strchr(char *s, char c);
 lin_t *addNode(lin_t **head, char *str);
 lin_t *addNodeEnd(lin_t **head, char *str);
 size_t printList(const lin_t *h);
-int search_node(lin_t *head, char *str);
+int searchNode(lin_t *head, char *str);
 size_t list_len(lin_t *h);
 
 /* llfuncs2 */
@@ -173,9 +173,9 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char *_memcpy(char *dest, char *src, unsigned int n);
 
 /* free */
-void free_members(vars_t *build);
-void free_args_and_buffer(vars_t *build);
-void free_args(char **args);
-void free_list(lin_t *head);
+void freeMembers(vars_t *build);
+void freeArgsAndBuffer(vars_t *build);
+void freeArgs(char **args);
+void freeList(lin_t *head);
 
 #endif
