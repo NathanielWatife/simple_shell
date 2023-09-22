@@ -10,15 +10,15 @@ int cdFunc(vars_t *build)
 	register uint count = 0;
 	bool ableToChange = false;
 
-	count = count_args(build->args);
+	count = countArgs(build->args);
 	if (count == 1)
-	ableToChange = cdToHome(build);
+		ableToChange = cdToHome(build);
 	else if (count == 2 && _strcmp(build->args[1], "-") == 0)
-	ableToChange = cdToPrevious(build);
+		ableToChange = cdToPrevious(build);
 	else
-	ableToChange = cdToCustom(build);
+		ableToChange = cdToCustom(build);
 	if (ableToChange)
-	upd_environ(build);
+		updEnviron(build);
 	return (1);
 }
 
@@ -32,10 +32,10 @@ bool cdToHome(vars_t *build)
 	register int i;
 	char *str, *ptr;
 
-	i = search_node(build->enviroment, "HOME");
+	i = searchNode(build->enviroment, "HOME");
 	if (i == -1)
 	{
-	return (true);
+		return (true);
 	}
 	str = getNodeAtIndex(build->enviroment, i);
 	ptr = _strchr(str, '=');
@@ -58,13 +58,13 @@ bool cdToPrevious(vars_t *build)
 	char *current = NULL;
 
 	current = getcwd(current, 0);
-	i = search_node(build->enviroment, "OLDPWD");
+	i = searchNode(build->enviroment, "OLDPWD");
 	if (i == -1)
 	{
-	chdir(current);
-	write(STDOUT_FILENO, current, _strlen(current));
-	displayNewLine();
-	return (true);
+		chdir(current);
+		write(STDOUT_FILENO, current, _strlen(current));
+		displayNewLine();
+		return (true);
 	}
 	str = getNodeAtIndex(build->enviroment, i);
 	ptr = _strchr(str, '=');
@@ -88,9 +88,9 @@ bool cdToCustom(vars_t *build)
 	changeStatus = chdir(build->args[1]);
 	if (changeStatus == -1)
 	{
-	errno = EBADCD;
-	errorHandler(build);
-	return (false);
+		errno = EBADCD;
+		errorHandler(build);
+		return (false);
 	}
 	return (true);
 }

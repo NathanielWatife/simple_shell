@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * search_node - searches linked list for string and
+ * searchNode - searches linked list for string and
  * returns index
  * @head: pointer to head of list
  * @str: input string
  * Return: index of node with matching string
  */
-int search_node(lin_t *head, char *str)
+int searchNode(lin_t *head, char *str)
 {
 	register int len = 0, index = 0, i;
 	lin_t *current;
@@ -16,20 +16,20 @@ int search_node(lin_t *head, char *str)
 	current = head;
 	while (current)
 	{
-	ptr = _strchr(current->str, '=');
-	len = ptr - current->str;
-	tmp = malloc(sizeof(char) * len + 1);
-	for (i = 0; i < len; i++)
-	tmp[i] = current->str[i];
-	tmp[i] = '\0';
-	if (_strcmp(str, tmp) == 0)
-	{
-	free(tmp);
-	return (index);
-	}
-	index++;
-	current = current->nxt;
-	free(tmp);
+		ptr = _strchr(current->str, '=');
+		len = ptr - current->str;
+		tmp = malloc(sizeof(char) * len + 1);
+		for (i = 0; i < len; i++)
+			tmp[i] = current->str[i];
+		tmp[i] = '\0';
+		if (_strcmp(str, tmp) == 0)
+		{
+			free(tmp);
+			return (index);
+		}
+		index++;
+		current = current->nxt;
+		free(tmp);
 	}
 	return (-1);
 }
@@ -48,8 +48,8 @@ lin_t *generateLinkedList(char **array)
 	head = NULL;
 	while (array[i])
 	{
-	addNodeEnd(&head, array[i]);
-	i++;
+		addNodeEnd(&head, array[i]);
+		i++;
 	}
 	return (head);
 }
@@ -69,19 +69,19 @@ lin_t *addNodeAtIndex(lin_t **head, int index, char *str)
 
 	current = *head;
 	if (!str)
-	return (NULL);
+		return (NULL);
 	newNode  = malloc(sizeof(lin_t));
 	if (!newNode)
 	{
-	perror("Malloc failed\n");
-	exit(errno);
+		perror("Malloc failed\n");
+		exit(errno);
 	}
 	newStr = _strdup(str);
 	if (!newStr)
 	{
-	free(newNode);
-	perror("Malloc failed\n");
-	exit(errno);
+		free(newNode);
+		perror("Malloc failed\n");
+		exit(errno);
 	}
 
 	newNode->str = newStr;
@@ -89,13 +89,13 @@ lin_t *addNodeAtIndex(lin_t **head, int index, char *str)
 
 	while (i < index - 1)
 	{
-	if (current->nxt == NULL)
-	{
-	free(newNode);
-	return (NULL);
-	}
-	current = current->nxt;
-	i++;
+		if (current->nxt == NULL)
+		{
+			free(newNode);
+			return (NULL);
+		}
+		current = current->nxt;
+		i++;
 	}
 	newNode->nxt = current->nxt;
 	current->nxt = newNode;
@@ -117,13 +117,13 @@ char *getNodeAtIndex(lin_t *head, unsigned int index)
 	current = head;
 	while (current)
 	{
-	if (count == index)
-	{
-	ptr = _strdup(current->str);
-	return (ptr);
-	}
-	count++;
-	current = current->nxt;
+		if (count == index)
+		{
+			ptr = _strdup(current->str);
+			return (ptr);
+		}
+		count++;
+		current = current->nxt;
 	}
 	return (NULL);
 }

@@ -8,38 +8,38 @@
 int helpFunc(vars_t *build)
 {
 	inborns_t help_arr[] = {
-	{"exit", helpExit},
-	{"env", helpEnv},
-	{"cd", helpCd},
-	{"setenv", helpSetenv},
-	{"unsetenv", helpUnsetenv},
-	{"help", helpHelp},
-	{NULL, NULL}
+		{"exit", helpExit},
+		{"env", helpEnv},
+		{"cd", helpCd},
+		{"setenv", helpSetenv},
+		{"unsetenv", helpUnsetenv},
+		{"help", helpHelp},
+		{NULL, NULL}
 	};
-	register int i = 0, j = 1, argCount = count_args(build->args);
+	register int i = 0, j = 1, argCount = countArgs(build->args);
 	bool foundCommand = false;
 
 	if (argCount == 1)
-	return (helpmenu());
+		return (helpmenu());
 	while (j < argCount)
 	{
-	i = 0;
-	while (help_arr[i].cmd)
-	{
-	if (_strcmp(build->args[j], help_arr[i].cmd) == 0)
-	{
-	foundCommand = true;
-	help_arr[i].func(build);
-	break;
-	}
-	i++;
-	}
-	j++;
+		i = 0;
+		while (help_arr[i].cmd)
+		{
+			if (_strcmp(build->args[j], help_arr[i].cmd) == 0)
+			{
+				foundCommand = true;
+				help_arr[i].func(build);
+				break;
+			}
+			i++;
+		}
+		j++;
 	}
 	if (foundCommand == false)
 	{
-	errno = ENOBUILTIN;
-	errorHandler(build);
+		errno = ENOBUILTIN;
+		errorHandler(build);
 	}
 	return (1);
 }
